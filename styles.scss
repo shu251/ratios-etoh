@@ -21,7 +21,98 @@ form {
   margin-bottom: 1.5rem;
 }
 
-.amount {
+caption,
+.section-title {
   font-weight: 700;
+  font-size: 1.1rem;
+  color: $body-color;
+  text-align: left;
+  padding-bottom: .5rem;
+}
+
+caption {
+  caption-side: top;
+}
+
+.section-title {
+  margin-top: 2rem;
+}
+
+table {
+  width: auto;
+  min-width: 320px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: .4rem;
+}
+
+thead th {
+  background: $primary;
+  color: white;
+  border: none;
+}
+
+tbody tr:nth-child(1) {
+  background: rgba($primary, .1);
+}
+
+tbody tr:nth-child(1) td:last-child {
   color: $primary;
+  font-weight: 700;
+}
+
+tbody tr:nth-child(2) {
+  background: rgba($secondary, .15);
+}
+
+tbody tr:nth-child(2) td:last-child {
+  color: darken($secondary, 20%);
+  font-weight: 700;
+}
+
+td, th {
+  padding: .5rem .9rem;
+}
+
+.steps {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step;
+  max-width: 480px;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: .5rem .75rem .5rem 2.75rem;
+  margin-bottom: .6rem;
+  border-radius: .4rem;
+  background: rgba($primary, .08);
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: .6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: $primary;
+  color: white;
+  font-weight: 700;
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps li:nth-child(even) {
+  background: rgba($secondary, .15);
+}
+
+.steps li:nth-child(even)::before {
+  background: $secondary;
+  color: $body-color;
 }
