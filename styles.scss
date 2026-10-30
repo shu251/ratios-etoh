@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+body {
+  max-width: 640px;
+  margin: 0;
+  padding-left: 2rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+form {
+  margin-bottom: 1.5rem;
+  max-width: 200px;
+}
+
+.ratio-note {
+  color: $secondary;
+  margin-bottom: 1.5rem;
+}
+
+.amount {
+  font-weight: 700;
+  color: $primary;
+}
