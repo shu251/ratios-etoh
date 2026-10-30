@@ -17,7 +17,7 @@ form {
 }
 
 .ratio-note {
-  color: $secondary;
+  color: darken($secondary, 35%);
   margin-bottom: 1.5rem;
 }
 
@@ -47,8 +47,8 @@ table {
 }
 
 thead th {
-  background: $primary;
-  color: white;
+  background: rgba($primary, .25);
+  color: $body-color;
   border: none;
 }
 
@@ -57,7 +57,7 @@ tbody tr:nth-child(1) {
 }
 
 tbody tr:nth-child(1) td:last-child {
-  color: $primary;
+  color: darken($primary, 25%);
   font-weight: 700;
 }
 
@@ -66,7 +66,7 @@ tbody tr:nth-child(2) {
 }
 
 tbody tr:nth-child(2) td:last-child {
-  color: darken($secondary, 20%);
+  color: darken($secondary, 35%);
   font-weight: 700;
 }
 
@@ -75,19 +75,28 @@ td, th {
 }
 
 .steps {
-  list-style: none;
-  padding-left: 0;
   counter-reset: step;
   max-width: 480px;
 }
 
+.steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .steps li {
+  list-style: none;
   counter-increment: step;
   position: relative;
   padding: .5rem .75rem .5rem 2.75rem;
   margin-bottom: .6rem;
   border-radius: .4rem;
   background: rgba($primary, .08);
+}
+
+.steps li::marker {
+  content: none;
 }
 
 .steps li::before {

@@ -25,34 +25,62 @@ viewof of_servings = Inputs.number([1, 24], {value: 1, step: 1, label: "Servings
 fmt = d3.format(".2~f")
 of_whiskey_oz = fmt(of_servings * 2)
 of_sweetener_oz = fmt(of_servings * 0.5)
-of_bitters_dashes = fmt(of_servings * 3)
-of_orange_peel = fmt(of_servings)
-of_lemon_peel = fmt(of_servings)
-of_ice_cubes = fmt(of_servings)
-of_cherries = fmt(of_servings)
 ```
 
 ### For `{ojs} of_servings` serving(s):
 
-**Ingredients**
+| Ingredient | Amount |
+|---|---|
+| Whiskey | `{ojs} of_whiskey_oz` oz |
+| Simple or maple syrup | `{ojs} of_sweetener_oz` oz |
 
-- Whiskey — <span class="amount">`{ojs} of_whiskey_oz` oz</span>
-- Simple or maple syrup — <span class="amount">`{ojs} of_sweetener_oz` oz</span>
-- Bitters — <span class="amount">`{ojs} of_bitters_dashes` dashes</span>, plus more to taste
-- Orange peel — <span class="amount">`{ojs} of_orange_peel`</span>
-- Lemon peel — <span class="amount">`{ojs} of_lemon_peel`</span>
-- Large ice cube(s) — <span class="amount">`{ojs} of_ice_cubes`</span>
-- Cherry (optional garnish) — <span class="amount">`{ojs} of_cherries`</span>
+: Ingredients
 
-**Steps** (per glass)
+<p class="section-title">Steps (per glass)</p>
 
-1. Dash the bitters into the glass.
-2. Add the sweetener.
-3. Add the whiskey.
+::: {.steps}
+1. Dash bitters into glass (n = 3).
+2. Add simple syrup or maple syrup.
+3. Add whiskey.
 4. Stir for 30 seconds.
-5. Dash in additional bitters, if wanted.
-6. Add the large ice cube.
-7. Add both an orange and lemon peel; pinch each peel, skin-side out, over the glass to release the oils.
+5. Dash in additional bitters, if desired.
+6. Add a large ice cube.
+7. Add _both_ an orange and lemon peel; pinch each peel, skin-side out, over the glass to release the oils.
 8. Garnish with a cherry, if desired.
+:::
+
+## G&T
+
+<p class="ratio-note">Ratio: 2 parts tonic water to 1 part gin</p>
+
+```{ojs}
+//| echo: false
+viewof gt_servings = Inputs.number([1, 24], {value: 1, step: 1, label: "Servings"})
+```
+
+```{ojs}
+//| echo: false
+gt_gin_oz = fmt(gt_servings * 1)
+gt_tonic_oz = fmt(gt_servings * 2)
+```
+
+### For `{ojs} gt_servings` serving(s):
+
+| Ingredient | Amount |
+|---|---|
+| Gin | `{ojs} gt_gin_oz` oz |
+| Tonic water | `{ojs} gt_tonic_oz` oz |
+
+: Ingredients
+
+<p class="section-title">Steps (per glass)</p>
+
+::: {.steps}
+1. Place large ice cubes in a glass.
+2. Pour gin directly onto the ice.
+3. Pour tonic water in second.
+4. Squeeze in plenty of fresh lime juice.
+5. Garnish with a lime peel.
+:::
 
 :::
