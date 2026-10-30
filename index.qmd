@@ -1,5 +1,5 @@
 ---
-title: "Old Fashioned Ratio Calculator"
+title: "Cocktail Ratio Calculator"
 format:
   html:
     theme: [cosmo, brand, styles.scss]
@@ -9,30 +9,50 @@ format:
     code-tools: false
 ---
 
-# Old Fashioned
+::: {.panel-tabset}
 
-<p class="ratio-note">Ratio: 4 parts bourbon to 1 part sweetener</p>
+## Old Fashioned
 
-```{ojs}
-//| echo: false
-viewof servings = Inputs.range([1, 24], {value: 1, step: 1, label: "Servings"})
-```
+<p class="ratio-note">Ratio: 4 parts whiskey to 1 part sweetener</p>
 
 ```{ojs}
 //| echo: false
-viewof sweetener = Inputs.radio(["simple syrup", "maple syrup"], {value: "simple syrup", label: "Sweetener"})
+viewof of_servings = Inputs.number([1, 24], {value: 1, step: 1, label: "Servings"})
 ```
 
 ```{ojs}
 //| echo: false
 fmt = d3.format(".2~f")
-bourbon_oz = fmt(servings * 2)
-sweetener_oz = fmt(servings * 0.5)
+of_whiskey_oz = fmt(of_servings * 2)
+of_sweetener_oz = fmt(of_servings * 0.5)
+of_bitters_dashes = fmt(of_servings * 3)
+of_orange_peel = fmt(of_servings)
+of_lemon_peel = fmt(of_servings)
+of_ice_cubes = fmt(of_servings)
+of_cherries = fmt(of_servings)
 ```
 
-### For `{ojs} servings` serving(s)
+### For `{ojs} of_servings` serving(s):
 
-| Ingredient | Amount |
-|---|---|
-| Bourbon | `{ojs} bourbon_oz` oz |
-| `{ojs} sweetener` | `{ojs} sweetener_oz` oz |
+**Ingredients**
+
+- Whiskey — <span class="amount">`{ojs} of_whiskey_oz` oz</span>
+- Simple or maple syrup — <span class="amount">`{ojs} of_sweetener_oz` oz</span>
+- Bitters — <span class="amount">`{ojs} of_bitters_dashes` dashes</span>, plus more to taste
+- Orange peel — <span class="amount">`{ojs} of_orange_peel`</span>
+- Lemon peel — <span class="amount">`{ojs} of_lemon_peel`</span>
+- Large ice cube(s) — <span class="amount">`{ojs} of_ice_cubes`</span>
+- Cherry (optional garnish) — <span class="amount">`{ojs} of_cherries`</span>
+
+**Steps** (per glass)
+
+1. Dash the bitters into the glass.
+2. Add the sweetener.
+3. Add the whiskey.
+4. Stir for 30 seconds.
+5. Dash in additional bitters, if wanted.
+6. Add the large ice cube.
+7. Add both an orange and lemon peel; pinch each peel, skin-side out, over the glass to release the oils.
+8. Garnish with a cherry, if desired.
+
+:::

@@ -1,0 +1,18 @@
+color:
+  palette:
+    wine:       "#6D4145"
+    orange:     "#F37420"
+    chartreuse: "#C7D14F"
+  foreground: wine
+  background: "#FFFFFF"
+  primary: orange
+  secondary: chartreuse
+typography:
+  fonts:
+    - family: Helvetica
+      source: system
+  base: Helvetica
+  headings:
+    family: Helvetica
+    color: wine
+    weight: 600
