@@ -1,0 +1,38 @@
+---
+title: "Old Fashioned Ratio Calculator"
+format:
+  html:
+    theme: [cosmo, brand, styles.scss]
+    fontsize: 1.05rem
+    linestretch: 1.6
+    toc: false
+    code-tools: false
+---
+
+# Old Fashioned
+
+<p class="ratio-note">Ratio: 4 parts bourbon to 1 part sweetener</p>
+
+```{ojs}
+//| echo: false
+viewof servings = Inputs.range([1, 24], {value: 1, step: 1, label: "Servings"})
+```
+
+```{ojs}
+//| echo: false
+viewof sweetener = Inputs.radio(["simple syrup", "maple syrup"], {value: "simple syrup", label: "Sweetener"})
+```
+
+```{ojs}
+//| echo: false
+fmt = d3.format(".2~f")
+bourbon_oz = fmt(servings * 2)
+sweetener_oz = fmt(servings * 0.5)
+```
+
+### For `{ojs} servings` serving(s)
+
+| Ingredient | Amount |
+|---|---|
+| Bourbon | `{ojs} bourbon_oz` oz |
+| `{ojs} sweetener` | `{ojs} sweetener_oz` oz |
